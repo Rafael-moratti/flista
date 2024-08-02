@@ -13,7 +13,7 @@
         <button onclick="Portugues()">Português</button>
         <button onclick="Matematica()">Matemática e Raciocínio Lógico</button>
         <button onclick="Especifico()">Especifico</button>
-        <button onclick="Desempate()">Outras para Desempate</button>
+        <button onclick="Todas()">Todas</button>
       </div>
       <div class="notes">
         <textarea id="notepad" rows="10" placeholder="Rascunho aqui... (shift + Enter pula para linha de baixo), não esqueça de ativar o botão para matematica no meu guru, (lembrar de indicar a direção correta), caneta azul e sinal de uma pausa, (fim é fim e coloca no modo avião)"></textarea>
@@ -79,12 +79,19 @@ function Portugues() {
     </script>
 
 <script>
-    function Desempate() {
+    function Todas() {
                 // Array com as URLs dos sites
                 var urls = [
-                "https://deepinfra.com/chat",
-                "https://huggingface.co/chat/",
-                "https://duckduckgo.com/?q=chat+aria&t=opera&ia=chat"
+                    "https://gemini.google.com/app",
+                    "https://www.bing.com/chat?q=Bing%20AI&qs=ds&form=HPCODX",
+                    "https://chatgpt.com/",
+                    "https://iask.ai/",
+                    "https://www.meuguru.com/guru-ia/nova-pergunta",
+                    "https://www.perplexity.ai/",
+                    "https://duckduckgo.com/?q=chat+aria&t=opera&ia=chat"
+                    "https://deepinfra.com/chat",
+                    "https://huggingface.co/chat/",
+                    "https://duckduckgo.com/?q=chat+aria&t=opera&ia=chat"
                 ];
     
                 // Iterar sobre as URLs e abrir novas abas
