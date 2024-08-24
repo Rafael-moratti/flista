@@ -13,6 +13,28 @@
         <button onclick="Portugues()">Português</button>
         <button onclick="Matematica()">Matemática e Raciocínio Lógico</button>
         <button onclick="Especifico()">Especifico</button>
+        <div class="dropdown">
+            <button onclick="toggleDropdown()">Links Personalizados</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="https://aistudio.google.com/app/prompts/new_chat" target="_blank">AI Studio</a>
+                <a href="https://chatgate.ai/pt/" target="_blank">ChatGate</a>
+                <a href="https://gemini.google.com/app" target="_blank">Gemini</a>
+                <a href="https://iask.ai/" target="_blank">iAsk</a>
+                <a href="https://www.bing.com/chat?q=Bing%20AI&qs=ds&form=HPCODX" target="_blank">Bing AI</a>
+                <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
+                <a href="https://chatgpt.com/g/g-kZ0eYXlJe-scholar-gpt" target="_blank">Scholar GPT</a>
+                <a href="https://claude.ai/new" target="_blank">Claude</a>
+                <a href="https://pi.ai/onboarding" target="_blank">Pi AI</a>
+                <a href="https://deepinfra.com/chat" target="_blank">Deep Infra</a>
+                <a href="https://www.meuguru.com/guru-ia" target="_blank">Meu Guru</a>
+                <a href="https://duckduckgo.com/?q=chat+aria&t=opera&ia=chat" target="_blank">DuckDuckGo</a>
+                <a href="https://huggingface.co/chat/" target="_blank">Hugging Face</a>
+                <a href="https://start.ai-pro.org/my-account" target="_blank">AI Pro</a>
+                <a href="https://suno.com/me" target="_blank">Suno</a>
+                <a href="https://www.chatpdf.com/" target="_blank">ChatPDF</a>
+                <a href="https://poe.com/" target="_blank">Poe</a>
+            </div>
+        </div>
         <!-- <button onclick="Desempate() -->
       </div>
       <div class="notes">
@@ -71,30 +93,22 @@ function Portugues() {
             }
     </script>
 
-<script>
-    function Desempate() {
-                // Array com as URLs dos sites
-                var urls = [
-                    "https://chat.chaton.ai/my/chats/msA3xmyVykpea0QowGW2l",
-                    "https://gemini.google.com/app",
-                    "https://www.bing.com/chat?q=Bing%20AI&qs=ds&form=HPCODX",
-                    "https://chatgpt.com/g/g-kZ0eYXlJe-scholar-gpt",
-                    "https://iask.ai/",
-                    "https://www.meuguru.com/guru-ia/nova-pergunta",
-                    "https://www.perplexity.ai/",
-                    "https://duckduckgo.com/?q=chat+aria&t=opera&ia=chat",
-                    "https://deepinfra.com/chat",
-                    "https://huggingface.co/chat/",
-                    "https://duckduckgo.com/?q=chat+aria&t=opera&ia=chat",
-                    "https://aistudio.google.com/app/prompts/new_chat"
-                ];
-    
-                // Iterar sobre as URLs e abrir novas abas
-                urls.forEach(function(url) {
-                    window.open(url, '_blank');
-                });
+function toggleDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown button')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
             }
-    </script>
+        }
+    }
+}
+    
   <style>
       body {
           display: flex;
