@@ -110,8 +110,7 @@
 <body>
   <div class="container">
     <div class="buttons">
-      <button onclick="Portugues()">Português</button>
-      <button onclick="Matematica()">Matemática e Raciocínio Lógico</button>
+      <button onclick="Portugues()">Todas as Matérias</button>
       <button onclick="Especifico()">Especifico</button>
       <div class="dropdown">
         <button onclick="toggleDropdown()">Links Personalizados</button>
@@ -153,11 +152,8 @@
     }
     function Matematica() {
       var urls = [
-        "https://chat.chaton.ai/my/chats/msA3xmyVykpea0QowGW2l",
         "https://www.meuguru.com/guru-ia/nova-pergunta",
-        "https://aistudio.google.com/app/prompts/new_chat",
         "https://iask.ai/",
-        "https://chatgate.ai/",
       ];
       urls.forEach(function(url) {
         window.open(url, '_blank');
