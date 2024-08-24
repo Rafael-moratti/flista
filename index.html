@@ -1,199 +1,194 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lista I.As</title>
-<link rel="icon" type="image/jpg" href="imagem/blob.jpg">
-<style>
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #74ebd5, #5e76e2af);
-    font-family: 'Arial', sans-serif;
-    color: #333;
-}
-.container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 95vh;
-}
-.buttons {
-    display: flex;
-    flex-direction: column;
-    width: 10%;
-    height: 100%;
-    background-color: #eee;
-    padding: 10px;
-}
-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 15px;
-    font-size: 20px;
-    width: 100%;
-    background-color: #3498db;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-color: #000000;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 5px;
-    transition: background-color 0.3s, transform 0.1s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-button:hover {
-    background-color: #2980b9;
-}
-button:active {
-    transform: scale(0.95);
-}
-.notes {
-    width: 80%;
-    height: 100%;
-    overflow-y: scroll;
-    border: 1px solid #ddd;
-    padding: 15px;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    max-height: 300px;
-    overflow-y: auto;
-}
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-.show {
-    display: block;
-}
-@media (max-width: 600px) {
-    .container {
-        flex-direction: column;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista I.As</title>
+  <link rel="icon" type="image/jpg" href="imagem/blob.jpg">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #74ebd5, #5e76e2af);
+      font-family: 'Arial', sans-serif;
+      color: #333;
     }
-    .buttons, .notes {
-        width: 100%;
+    .container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 95vh;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      width: 10%;
+      height: 100%;
+      background-color: #eee;
+      padding: 10px;
     }
     button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      font-size: 20px;
+      width: 100%;
+      background-color: #3498db;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-color: #000000;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 5px;
+      transition: background-color 0.3s, transform 0.1s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+    .notes {
+      width: 80%;
+      height: 100%;
+      overflow-y: scroll;
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+      color: #00bfff; /* Cor de neon azul claro */
+      text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff; /* Efeito de neon */
+    }
+    .show {
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+      .buttons, .notes {
+        width: 100%;
+      }
+      button {
         width: 90%;
         padding: 12px;
         font-size: 16px;
-    }
-    h1 {
+      }
+      h1 {
         font-size: 2em;
+      }
     }
-}
-</style>
+  </style>
 </head>
 <body>
-<div class="container">
+  <div class="container">
     <div class="buttons">
-        <button onclick="Portugues()">Português</button>
-        <button onclick="Matematica()">Matemática e Raciocínio Lógico</button>
-        <button onclick="Especifico()">Especifico</button>
-        <div class="dropdown">
-            <button onclick="toggleDropdown()">Links Personalizados</button>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="https://poe.com/" target="_blank">Poe</a>
-                <a href="https://www.chatpdf.com/" target="_blank">ChatPDF</a>
-                <a href="https://convertio.co/pt/png-svg/" target="_blank">Xonvert SVG</a>
-                <a href="https://aistudio.google.com/app/prompts/new_chat" target="_blank">AI Studio</a>
-                <a href="https://chatgate.ai/pt/" target="_blank">ChatGate</a>
-                <a href="https://gemini.google.com/app" target="_blank">Gemini</a>
-                <a href="https://iask.ai/" target="_blank">iAsk</a>
-                <a href="https://www.bing.com/chat?q=Bing%20AI&qs=ds&form=HPCODX" target="_blank">Bing AI</a>
-                <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
-                <a href="https://chatgpt.com/g/g-kZ0eYXlJe-scholar-gpt" target="_blank">Scholar GPT</a>
-                <a href="https://claude.ai/new" target="_blank">Claude</a>
-                <a href="https://pi.ai/onboarding" target="_blank">Pi AI</a>
-                <a href="https://deepinfra.com/chat" target="_blank">Deep Infra</a>
-                <a href="https://www.meuguru.com/guru-ia" target="_blank">Meu Guru</a>
-                <a href="https://duckduckgo.com/?q=chat+aria&t=opera&ia=chat" target="_blank">DuckDuckGo</a>
-                <a href="https://huggingface.co/chat/" target="_blank">Hugging Face</a>
-                <a href="https://start.ai-pro.org/my-account" target="_blank">AI Pro</a>
-                <a href="https://suno.com/me" target="_blank">Suno</a>
-                
-                
-            </div>
+      <button onclick="Portugues()">Português</button>
+      <button onclick="Matematica()">Matemática e Raciocínio Lógico</button>
+      <button onclick="Especifico()">Especifico</button>
+      <div class="dropdown">
+        <button onclick="toggleDropdown()">Links Personalizados</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="https://poe.com/" target="_blank">Poe</a>
+          <a href="https://www.chatpdf.com/" target="_blank">ChatPDF</a>
+          <a href="https://convertio.co/pt/png-svg/" target="_blank">Xonvert SVG</a>
+          <a href="https://aistudio.google.com/app/prompts/new_chat" target="_blank">AI Studio</a>
+          <a href="https://chatgate.ai/pt/" target="_blank">ChatGate</a>
+          <a href="https://gemini.google.com/app" target="_blank">Gemini</a>
+          <a href="https://iask.ai/" target="_blank">iAsk</a>
+          <a href="https://www.bing.com/chat?q=Bing%20AI&qs=ds&form=HPCODX" target="_blank">Bing AI</a>
+          <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
+          <a href="https://chatgpt.com/g/g-kZ0eYXlJe-scholar-gpt" target="_blank">Scholar GPT</a>
+          <a href="https://claude.ai/new" target="_blank">Claude</a>
+          <a href="https://pi.ai/onboarding" target="_blank">Pi AI</a>
+          <a href="https://deepinfra.com/chat" target="_blank">Deep Infra</a>
+          <a href="https://www.meuguru.com/guru-ia" target="_blank">Meu Guru</a>
+          <a href="https://duckduckgo.com/?q=chat+aria&t=opera&ia=chat" target="_blank">DuckDuckGo</a>
+          <a href="https://huggingface.co/chat/" target="_blank">Hugging Face</a>
+          <a href="https://start.ai-pro.org/my-account" target="_blank">AI Pro</a>
+          <a href="https://suno.com/me" target="_blank">Suno</a>
         </div>
+      </div>
     </div>
-    <div class="notes">
-        <textarea id="notepad" rows="10" placeholder="Rascunho aqui"></textarea>
+    <div class="notes"><textarea id="notepad" rows="10" placeholder="Rascunho aqui"></textarea>
     </div>
-</div>
-<script>
-function Portugues() {
-    var urls = [
+  </div>
+  <script>
+    function Portugues() {
+      var urls = [
         "https://www.meuguru.com/guru-ia/nova-pergunta",
         "https://chat.chaton.ai/my/chats/msA3xmyVykpea0QowGW2l",
         "https://aistudio.google.com/app/prompts/new_chat",
         "https://chatgate.ai/",
         "https://iask.ai/",
         "https://www.bing.com/chat?q=Bing%20AI&qs=ds&form=HPCODX",
-    ];
-    urls.forEach(function(url) {
+      ];
+      urls.forEach(function(url) {
         window.open(url, '_blank');
-    });
-}
-
-function Matematica() {
-    var urls = [
+      });
+    }
+    function Matematica() {
+      var urls = [
         "https://chat.chaton.ai/my/chats/msA3xmyVykpea0QowGW2l",
         "https://www.meuguru.com/guru-ia/nova-pergunta",
         "https://aistudio.google.com/app/prompts/new_chat",
         "https://iask.ai/",
         "https://chatgate.ai/",
-    ];
-    urls.forEach(function(url) {
+      ];
+      urls.forEach(function(url) {
         window.open(url, '_blank');
-    });
-}
-
-function Especifico() {
-    var urls = [
+      });
+    }
+    function Especifico() {
+      var urls = [
         "https://chatgpt.com/",
         "https://www.perplexity.ai/"
-    ];
-    urls.forEach(function(url) {
+      ];
+      urls.forEach(function(url) {
         window.open(url, '_blank');
-    });
-}
-
-function toggleDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-window.onclick = function(event) {
-    if (!event.target.matches('.dropdown button')) {
+      });
+    }
+    function toggleDropdown() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown button')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </body>
 </html>
